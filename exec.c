@@ -12,7 +12,10 @@ void exec(stack_t **top, unsigned int line_number)
 {
 	instruction_t op_func[] = {
 		{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop},
-		{"swap", swap}, {"add", add}, {"nop", nop},
+		{"swap", swap}, {"add", add}, {"nop", nop}, {"sub", sub},
+		{"div", div_f}, {"mul", mul}, {"mod", mod}, {"pchar", pchar},
+		{"pstr", pstr}, {"rotl", rotl}, {"rotr", rotr},
+		{"queue", queue}, {"stack", stack},
 		{NULL, NULL}
 	};
 	unsigned int i = 0;

@@ -1,6 +1,6 @@
 #include "monty.h"
 
-carrier_t carrier = {NULL, NULL, NULL};
+carrier_t carrier = {NULL, NULL, NULL, 0};
 /**
  * main - monty program entry point
  *

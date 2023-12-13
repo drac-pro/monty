@@ -42,6 +42,7 @@ typedef struct instruction_s
  * @file: File pointer to the monty file
  * @line: pointer to a string found on a line in file
  * @arg: opcode argument
+ * @setter: sets the format of the data 0(stack) or 1(queue)
  *
  * Description: carry values through functions in the programe
  */
@@ -50,6 +51,7 @@ typedef struct carrier_s
 	FILE *file;
 	char *line;
 	char *arg;
+	unsigned int setter;
 } carrier_t;
 extern carrier_t carrier;
 
@@ -57,6 +59,7 @@ void exec(stack_t **top, unsigned int line_number);
 
 void free_stack(stack_t *top);
 void addnode(stack_t **top, int n);
+void add_queue_node(stack_t **top, int n);
 
 void push(stack_t **top, unsigned int line_number);
 void pall(stack_t **top, unsigned int line_number);
@@ -65,5 +68,15 @@ void pop(stack_t **top, unsigned int line_number);
 void swap(stack_t **top, unsigned int line_number);
 void add(stack_t **top, unsigned int line_number);
 void nop(stack_t **top, unsigned int line_number);
+void sub(stack_t **top, unsigned int line_number);
+void div_f(stack_t **top, unsigned int line_number);
+void mul(stack_t **top, unsigned int line_number);
+void mod(stack_t **top, unsigned int line_number);
+void pchar(stack_t **top, unsigned int line_number);
+void pstr(stack_t **top, unsigned int line_number);
+void rotl(stack_t **top, unsigned int line_number);
+void rotr(stack_t **top, unsigned int line_number);
+void stack(stack_t **top, unsigned int line_number);
+void queue(stack_t **top, unsigned int line_number);
 
 #endif /*MONTY_H*/

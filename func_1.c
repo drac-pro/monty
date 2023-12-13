@@ -38,7 +38,10 @@ void push(stack_t **top, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	n = atoi(carrier.arg);
-	addnode(top, n);
+	if (carrier.setter == 0)
+		addnode(top, n);
+	else
+		add_queue_node(top, n);
 }
 
 /**
