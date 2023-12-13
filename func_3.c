@@ -101,16 +101,13 @@ void rotl(stack_t **top, unsigned int line_number)
 	if (!current || !current->next)
 		return;
 	next = current->next;
-	current->next = NULL;
-	current->prev = next;
-	while (next)
-	{
-		next->prev = next->next;
-		next->next = current;
-		current = next;
-		next = next->prev;
-	}
-	*top = current;
+	next->prev = NULL;
+	while (current->next)
+		current = current->next;
+	current->next = *top;
+	(*top)->prev = current;
+	(*top)->next = NULL;
+	*top = next;
 }
 
 /**
