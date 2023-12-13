@@ -95,11 +95,12 @@ void pstr(stack_t **top, unsigned int line_number)
  */
 void rotl(stack_t **top, unsigned int line_number)
 {
-	stack_t *current = *top, *next = (*top)->next;
+	stack_t *current = *top, *next;
 	(void)line_number;
 
-	if (!current)
+	if (!current || !current->next)
 		return;
+	next = current->next;
 	current->next = NULL;
 	current->prev = next;
 	while (next)
